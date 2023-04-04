@@ -13,7 +13,6 @@ const useUserList = () => {
         id: key,
         ...data[key],
       }));
-      console.log(customer);
       setUsers(customer);
       setLoading(false);
     });

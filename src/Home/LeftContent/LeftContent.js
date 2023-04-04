@@ -1,12 +1,9 @@
 import React from "react";
-import femaleAvator from "../../images/female.png";
-import maleAvator from "../../images/male.png";
 const LeftContent = ({ user }) => {
-  console.log(user);
   return (
     <div className="grid grid-cols-2">
       <div className="text-start">
-        <h1 className="text-4xl font-semibold">{user.id}</h1>
+        <h1 className="text-4xl font-semibold">{user?.id}</h1>
         <h2 className="text-3xl font-medium">
           {user ? "Person Detected" : "No one Detected"}
         </h2>
@@ -15,42 +12,34 @@ const LeftContent = ({ user }) => {
             <tr>
               <td className="text-3xl">Name </td>
               <td className="text-center px-5">:</td>
-              <td className="text-3xl">{user.name}</td>
+              <td className="text-3xl">{user?.name}</td>
             </tr>
             <tr>
               <td className="text-3xl">Location </td>
               <td className="text-center">:</td>
-              <td className="text-3xl">{user.location}</td>
+              <td className="text-3xl">{user?.location}</td>
             </tr>
             <tr>
               <td className="text-3xl">Date</td>
               <td className="text-center">:</td>
-              <td className="text-3xl">{user.date}</td>
+              <td className="text-3xl">{user?.date}</td>
             </tr>
             <tr>
               <td className="text-3xl">Time</td>
               <td className="text-center">:</td>
-              <td className="text-3xl">{user.time}</td>
+              <td className="text-3xl">{user?.time}</td>
             </tr>
           </tbody>
         </table>
         <h1 className="text-3xl font-semibold">Description:</h1>
         <hr />
         <p className="text-2xl my-2 font-normal">
-          {` ${user.name} detected 
-          at ${user.location} on ${user.date}`}
+          {` ${user?.name} detected 
+          at ${user?.location} on ${user?.date}`}
         </p>
       </div>
       <div>
-        {user?.gender.toLowerCase() === "female" ? (
-          <>
-            <img src={femaleAvator} alt="" />
-          </>
-        ) : (
-          <>
-            <img src={maleAvator} alt="" />
-          </>
-        )}
+        <img src={user?.img} alt="" />
       </div>
     </div>
   );
