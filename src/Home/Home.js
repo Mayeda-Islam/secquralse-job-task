@@ -48,10 +48,7 @@ const Home = () => {
               <p className="text-4xl ">Event</p>
               <div className="dropdown dropdown-left">
                 <label tabIndex={0} className="btn m-1">
-                  <MdSettingsInputComponent
-                    // onClick={() => handleSort()}
-                    className="text-5xl"
-                  ></MdSettingsInputComponent>
+                  <MdSettingsInputComponent className="text-5xl"></MdSettingsInputComponent>
                 </label>
                 <ul
                   tabIndex={0}

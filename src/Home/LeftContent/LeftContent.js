@@ -1,5 +1,6 @@
 import React from "react";
-
+import femaleAvator from "../../images/female.png";
+import maleAvator from "../../images/male.png";
 const LeftContent = ({ user }) => {
   console.log(user);
   return (
@@ -40,7 +41,17 @@ const LeftContent = ({ user }) => {
           at ${user.location} on ${user.date}`}
         </p>
       </div>
-      <div>image</div>
+      <div>
+        {user?.gender.toLowerCase() === "female" ? (
+          <>
+            <img src={femaleAvator} alt="" />
+          </>
+        ) : (
+          <>
+            <img src={maleAvator} alt="" />
+          </>
+        )}
+      </div>
     </div>
   );
 };
