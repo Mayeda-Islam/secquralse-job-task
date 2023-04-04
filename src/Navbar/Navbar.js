@@ -1,11 +1,12 @@
 import React from "react";
-import Data from "../Home/FakeData";
+import Data from "../Home/useUserList";
+import useUserList from "../Home/useUserList";
 
 const Navbar = () => {
-  const fakeData = Data;
+  const { users, loading } = useUserList();
   let maleCount = 0;
   let femaleCount = 0;
-  fakeData.map((data) =>
+  users.forEach((data) =>
     data.gender.toLowerCase() === "male" ? maleCount++ : femaleCount++
   );
   return (
